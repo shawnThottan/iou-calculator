@@ -14,8 +14,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "serve": "serve -s build -l 8000",
+    "unit": "react-scripts test --watchAll=false --coverage",
+    "test": "start-server-and-test start http://localhost:8000 unit",
+    "eject": "react-scripts eject",
+    "lint": "yarn run eslint",
+    "pre-build": "yarn && yarn lint && yarn test && yarn build",
+    "app": "yarn --cwd ./api pre-build && yarn --cwd ./api start:bg && yarn pre-build && yarn serve",
+    "app:docker": "docker-compose up --build -d"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +40,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@ngneat/falso": "^5.3.0",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.33",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "jest-canvas-mock": "^2.4.0",
+    "jest-websocket-mock": "^2.3.0",
+    "puppeteer": "^14.1.0",
+    "serve": "^13.0.2",
+    "start-server-and-test": "^1.14.0",
+    "typescript": "^4.6.4"
   }
 }
