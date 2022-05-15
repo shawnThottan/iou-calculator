@@ -4,7 +4,17 @@ A simple web application that lets you draw two rectangles on the screen. It wil
 ## Running the Application
 You require ``Yarn`` (and ``Docker``) to be set up on your system before running the following commands
 
+## Configuration
+* You can modify the following properties for the API:
+	* ``PORT`` in .env file (specifies the port at which the API server would run)
+	* ``NO_DECIMALS`` in .env file(specifies the number of decimals to be returned from the calculated IoU)
+	* ``instances`` in ecosystem.config.js to specify the instances to deploy while in production mode.
+* You can modify the following properties for the Client:
+	* ``PORT`` in .env file (specifies the port at which the API server would run)
+	* ``REACT_APP_WS_URL`` in .env file (specifies the URL to connect to the server.)
+
 ### Complete app in production mode
+* Change ``REACT_APP_WS_URL`` to ``ws://127.0.0.1:3000`` to point to the local server.
 * Run ``yarn app``.
 	* Installs the packages.
 	* Runs lint
@@ -13,11 +23,13 @@ You require ``Yarn`` (and ``Docker``) to be set up on your system before running
 	* Runs the app. API at port: 3000. Client at port:8000 
 
 ### Complete app in production mode using docker
+* Change ``REACT_APP_WS_URL`` to ``ws://127.0.0.1:3000`` to point to the local server.
 * Run ``yarn app:docker``.
 	* Runs the app. API at port: 3000. Client at port:8000 
 
 ### Frontend in dev mode
 * Run ``yarn`` to install the packages.
+* Change ``REACT_APP_WS_URL`` to ``ws://127.0.0.1:3000`` to point to the local server.
 * Run ``yarn start`` to start the application in a dev environment.
 * The application would run on http://localhost:8000/ by default.
 
@@ -32,15 +44,6 @@ You require ``Yarn`` (and ``Docker``) to be set up on your system before running
 * Run ``yarn run test`` to run the tests for the client.
 * Run ``yarn run test`` on the /api folder to run the tests for the server.
 
-## Configurations
-* You can modify the following properties for the API:
-	* ``PORT`` in .env file (specifies the port at which the API server would run)
-	* ``NO_DECIMALS`` in .env file(specifies the number of decimals to be returned from the calculated IoU)
-	* ``instances`` in ecosystem.config.js to specify the instances to deploy while in production mode.
-* You can modify the following properties for the Client:
-	* ``PORT`` in .env file (specifies the port at which the API server would run)
-	* ``REACT_APP_WS_URL`` in .env file (specifies the URL to connect to the server.)
-
 ## Using the application
 * Click and drag once to draw the ground truth bounding box.
 * Click and drag again to draw the predicted bounding box.
@@ -48,7 +51,7 @@ You require ``Yarn`` (and ``Docker``) to be set up on your system before running
 * Once you draw the predicted bounding box, drawing again, restarts the whole process.
 
 ## ScreenShots
-![app on mobile](./readme_files/app.png)
+![app on mobile](./readme_files/screen-capture.gif)
 
 
 ## Credits

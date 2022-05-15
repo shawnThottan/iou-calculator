@@ -66,10 +66,7 @@ function App() {
 
     debounceTimeout.current = setTimeout(() => {
       const currentClicks = clicks.current;
-      const calculatedIoU = calculateIoU(currentClicks);
-      if (currentClicks !== clicks.current) { return; }
-
-      setIou(calculatedIoU);
+      calculateIoU(currentClicks);
     }, 100);
   };
 
