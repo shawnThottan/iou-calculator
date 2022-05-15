@@ -1,6 +1,8 @@
 # Intersection over Union
 A simple web application that lets you draw two rectangles on the screen. It will printout the IoU(Intersection over Union) on screen.
 
+Try out the demo site [here](https://iou-calculator-prod-iou-calculator-xmzafa.mo1.mogenius.io/)
+
 ## Running the Application
 You require ``Yarn`` (and ``Docker``) to be set up on your system before running the following commands
 
@@ -57,3 +59,4 @@ You require ``Yarn`` (and ``Docker``) to be set up on your system before running
 ## Credits
 * [Create React App](https://github.com/facebook/create-react-app)
 * [Draw on Canvas](https://codepen.io/bartezic/pen/gOKmwW)
+* [MoGenius (used to deploy demo site)](https://studio.mogenius.com/)
